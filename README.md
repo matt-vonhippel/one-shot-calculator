@@ -39,21 +39,21 @@ The jupyter notebook, `one_shot_calculator_examples_3e.ipynb`, has a series of e
 
 That's up to you! Here are some things I could do if people are interested:
 
--More professionalism: I could set up this to actually work with `pip`, or otherwise do more "real Python package" things.
+- More professionalism: I could set up this to actually work with `pip`, or otherwise do more "real Python package" things.
 
--More user-friendliness: I could set this up so you don't have to know as much about Python to use it, possibly with some sort of web interface.
+- More user-friendliness: I could set this up so you don't have to know as much about Python to use it, possibly with some sort of web interface.
 
--More editions: I could do this for a different edition of D&D, Pathfinder, or some other appropriate RPG. In order to do that I need a CSV full of monsters for that edition. I have one for AD&D 1e and 2e, so I might do that next.
+- More editions: I could do this for a different edition of D&D, Pathfinder, or some other appropriate RPG. In order to do that I need a CSV full of monsters for that edition. I have one for AD&D 1e and 2e, so I might do that next.
 
--More examples: I'd love to include a super-high-optimization build in the examples notebook. If someone can walk me through a standard opener for the Mailman or Cindy or the like I can add that as an example.
+- More examples: I'd love to include a super-high-optimization build in the examples notebook. If someone can walk me through a standard opener for the Mailman or Cindy or the like I can add that as an example.
 
--More sensitivity: In order for the one-shot histograms to be fully accurate they need to take into account immunities. I could add some code to process_csv to add columns for common types of immunities so you can condition on them in your one-shot distributions.
+- More sensitivity: In order for the one-shot histograms to be fully accurate they need to take into account immunities. I could add some code to process_csv to add columns for common types of immunities so you can condition on them in your one-shot distributions.
 
--More versatility: If you're skeptical about one-shotting things, there is a more "normal" concept, average damage per round (DPR). It would be easy to add a DPR calculator. I could also give you an overall one-shot percentage with a given encoutner table, or even try to make a setup to answer more complicated questions like whether you can kill a monster before it kills you.
+- More versatility: If you're skeptical about one-shotting things, there is a more "normal" concept, average damage per round (DPR). It would be easy to add a DPR calculator. I could also give you an overall one-shot percentage with a given encoutner table, or even try to make a setup to answer more complicated questions like whether you can kill a monster before it kills you.
 
--More efficiency: This code is quite slow! It could probably be a lot faster.
+- More efficiency: This code is quite slow! It could probably be a lot faster.
 
--More fun stuff: Want code for specific spells? Anarchic Initiate Chaotic Surges? Other specialized things?
+- More fun stuff: Want code for specific spells? Anarchic Initiate Chaotic Surges? Other specialized things?
 
 
 ## Acknowledgements

@@ -7,16 +7,23 @@ then edit the process_csv_3e function as needed.
 
 import pandas as pd
 import charset_normalizer
+from importlib import resources as impresources
+from . import csv
 
 def check_encoding(csv_filename):
     """Tries to guess the encoding of a csv file and prints the result"""
-    with open(csv_filename,"rb") as rawdata:
+    #using importlib.resources to control access to the csv files
+    csv_file=impresources.files(csv) / csv_filename
+    with csv_file.open("rb") as rawdata:
         print(charset_normalizer.detect(rawdata.read(50000)))
 
-def process_csv_3e(csv_filename):
+def process_csv_3p5():
     """Processes the CSV file into a usable pandas dataframe and returns the result"""
 
-    third_ed_monster_table=pd.read_csv(csv_filename,encoding="windows-1250")
+    #using importlib.resources to control access to the csv files
+    csv_file=impresources.files(csv) / 'Monster Compendium (Graphless).csv'
+
+    third_ed_monster_table=pd.read_csv(csv_file,encoding="windows-1250")
 
     #dropping the weird extra NaN line at the end
     third_ed_monster_table=third_ed_monster_table[~third_ed_monster_table.Creature.isna()]

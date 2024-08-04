@@ -4,42 +4,33 @@ There's a saying in some RPGs: the best debuff for your enemies is *dead*.
 
 In edition 3.5 of Dungeons and Dragons, it is possible to make a character that does vastly more damage than you will ever need. Once you can reliably one-shot the kinds of monsters you're likely to face, you can focus the rest of your character's resources on doing other things, like not dying.
 
-Thus, one-shot-calculator. This is a set of Python modules made to calculate your chances of one-shotting monsters of a particular challenge rating. It can print out a histogram of your chances for one-shotting monsters, and has various other functions you can use to calculate various other useful things.
+Thus, one-shot-calculator. This is Python package made to calculate your chances of one-shotting monsters of a particular challenge rating. It can print out a histogram of your chances for one-shotting monsters, and has various other functions you can use to calculate various other useful things.
 
 ## Install
 
-In order to use these modules, you have to know at least a little bit about programming in Python. It's easier than you might think!
+The easiest way to use these modules is to start from this Google Colab notebook.
 
-Assuming you're using `conda`, say via [miniconda](https://docs.anaconda.com/miniconda/miniconda-install/), you'll need to install the `pandas` library and the `charset_normalizer` library with
+If you have Python set up on your own machine, you can install with:
 
-    conda install pandas
-    conda install charset_normalizer
-
-Currently, one-shot-calculator isn't set up to be installed with `pip` or the like. You should put the folder one_shot_calculator in your PYTHONPATH with a command like this:
-
-    export PYTHONPATH="folder/this/is/in"
-
-Finally, there is a Jupyter notebook of examples, so if you want to access that you need to be able to use [Jupyter](https://jupyter.org/).
+```
+pip install one_shot_calculator
+```
 
 ## Usage
 
-The project contains three modules, a jupyter notebook of examples, and a CSV file full of monsters.
+The package contains three modules and a CSV file full of monsters.
 
 The CSV is derived from [an Excel sheet created by Giant in the Playground Forum user ezjakii](https://forums.giantitp.com/showthread.php?402179). It contains nearly all monsters published by Wizards of the Coast for D&D 3.0 and D&D 3.5.
-
-The jupyter notebook, `one_shot_calculator_examples_3e.ipynb`, has a series of examples showing how to use the modules.
 
 `process_csv.py` contains functions for processing the CSV file so it can be used in the other modules.
 
 `discrete_dists.py` contains general functions for manipulating discrete probability distributions with integer outcomes.
 
-`one_shot_calculator_3e.py` contains functions for manipulating probability distributions that describe your chance of one-shotting opponents in D&D 3.5. This includes distributions for damage dealt by attacks and for saving throws. You build a distribution describing your chance of one-shotting opponents, then use the function one_shot_histogram to make a histogram of your chance of one-shotting opponents.
+`one_shot_calculator_3p5.py` contains functions for manipulating probability distributions that describe your chance of one-shotting opponents in D&D 3.5. This includes distributions for damage dealt by attacks and for saving throws. You build a distribution describing your chance of one-shotting opponents, then use the function one_shot_histogram to make a histogram of your chance of one-shotting opponents.
 
 ## Future Extensions
 
 That's up to you! Here are some things I could do if people are interested:
-
-- More professionalism: I could set up this to actually work with `pip`, or otherwise do more "real Python package" things.
 
 - More user-friendliness: I could set this up so you don't have to know as much about Python to use it, possibly with some sort of web interface.
 

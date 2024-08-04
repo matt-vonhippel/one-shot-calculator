@@ -42,4 +42,4 @@ def one_shot_histogram(dataframe,low_CR,high_CR,one_shot_function):
        low_CR is the lowest CR included, high_CR is the highest
        one_shot_function is a function that acts on the dataframe and gives a chance of one-shotting a monster
        """
-    return dataframe.loc[(dataframe["CR"]>=low_CR) & (dataframe["CR"]<=high_CR)].apply(one_shot_function,axis=1).hist(bins=list(map(lambda x: x/20,range(21))))
+    return dataframe.loc[(dataframe["CR"]>=low_CR) & (dataframe["CR"]<=high_CR)].apply(one_shot_function,axis=1).round(3).hist(bins=list(map(lambda x: x/20,range(21))))

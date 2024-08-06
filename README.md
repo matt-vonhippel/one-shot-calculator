@@ -1,32 +1,32 @@
-# one-shot-calculator
+# One-Shot Calculator
 
 There's a saying in some RPGs: the best debuff for your enemies is *dead*.
 
 In edition 3.5 of Dungeons and Dragons, it is possible to make a character that does vastly more damage than you will ever need. Once you can reliably one-shot the kinds of monsters you're likely to face, you can focus the rest of your character's resources on doing other things, like not dying.
 
-Thus, one-shot-calculator. This is Python package to calculate your chances of one-shotting monsters of a particular challenge rating. It can print out a histogram of your chances for one-shotting monsters, and has various other functions you can use to calculate various other useful things.
+Thus, `one_shot_calculator`. This is Python package to calculate your chances of one-shotting monsters of a particular challenge rating. It can print out a histogram of your chances for one-shotting monsters, and has various other functions you can use to calculate various other useful things.
 
 ## Install
 
-If you aren't used to using Python, the easiest way to use one-shot-calculator is to start from [this Google Colab notebook](https://colab.research.google.com/drive/1yWaMMJ_s-MK-ApQlY2LmhExGpLlOYQRE?usp=sharing). Just open up the notebook, try out the examples, then try modifying the code to do what you want to do.
+If you aren't used to using Python, the easiest way to use `one_shot_calculator` is to start from [this Google Colab notebook](https://colab.research.google.com/drive/1yWaMMJ_s-MK-ApQlY2LmhExGpLlOYQRE?usp=sharing). Just open up the notebook, try out the examples, then try modifying the code to do what you want to do.
 
 If you are familiar with Python, you can instead install with:
 
 ```
-pip install one_shot_calculator
+pip install one-shot-calculator
 ```
 
 ## Usage
 
 The package contains three modules and a CSV file full of monsters.
 
-The CSV is derived from [an Excel sheet created by Giant in the Playground Forum user ezjakii](https://forums.giantitp.com/showthread.php?402179). It contains nearly all monsters published by Wizards of the Coast for D&D 3.0 and D&D 3.5.
+The CSV is derived from [an Excel sheet created by Giant in the Playground Forum user ezkajii](https://forums.giantitp.com/showthread.php?402179). It contains nearly all monsters published by Wizards of the Coast for D&D 3.0 and D&D 3.5.
 
 `process_csv.py` contains functions for processing the CSV file so it can be used in the other modules.
 
 `discrete_dists.py` contains general functions for manipulating discrete probability distributions with integer outcomes.
 
-`one_shot_calculator_3p5.py` contains functions for manipulating probability distributions that describe your chance of one-shotting opponents in D&D 3.5. This includes distributions for damage dealt by attacks and for saving throws. You build a distribution describing your chance of one-shotting opponents, then use the function one_shot_histogram to make a histogram of your chance of one-shotting opponents.
+`one_shot_calculator_3p5.py` contains functions for manipulating probability distributions that describe your chance of one-shotting opponents in D&D 3.5. This includes distributions for damage dealt by attacks and for saving throws. You build a distribution describing your chance of one-shotting opponents, then use the function `one_shot_histogram` to make a histogram of your chance of one-shotting opponents.
 
 ## Future Extensions
 

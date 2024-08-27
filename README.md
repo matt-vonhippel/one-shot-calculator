@@ -40,7 +40,7 @@ That's up to you! Here are some things I could do if people are interested:
 
 - More sensitivity: In order for the one-shot histograms to be fully accurate they need to take into account immunities. I could add some code to process_csv to add columns for common types of immunities so you can condition on them in your one-shot distributions.
 
-- More versatility: If you're skeptical about one-shotting things, there is a more "normal" concept, average damage per round (DPR). It would be easy to add a DPR calculator. I could also give you an overall one-shot percentage with a given encoutner table, or even try to make a setup to answer more complicated questions like whether you can kill a monster before it kills you.
+- More versatility: If you're skeptical about one-shotting things, there is a more "normal" concept, average damage per round (DPR). It would be easy to add a DPR calculator. I could also give you an overall one-shot percentage with a given encounter table, or even try to make a setup to answer more complicated questions like whether you can kill a monster before it kills you.
 
 - More efficiency: This code is quite slow! It could probably be a lot faster.
 

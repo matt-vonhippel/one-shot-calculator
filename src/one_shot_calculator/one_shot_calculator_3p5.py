@@ -5,11 +5,6 @@ Module for calculating the chance to one-shot monsters in D&D 3.5.
 import pandas as pd
 from one_shot_calculator.discrete_dists import *
 
-def min_one(dist):
-    """Returns dist, changed so that any outcomes below one are set to one.
-       This is the rule for damage in D&D 3.5."""
-    return {list(dist)[i]: dist[list(dist)[i]] if list(dist)[i]>1 else 0 for i in range(len(list(dist))) } | {1: sum(dist[list(dist)[i]] if list(dist)[i]<=1 else 0 for i in range(len(list(dist)))) } 
-
 def attack_dist(attack_bonus,armor_class,damage_dist,crit_range=(20,20),crit_mult=2,confirm_bonus=0,crit_effect={0:1}):
     """Returns the probability distribution for damage dealt by attacks with attack_bonus against
        armor_class which if they hit deal damage_dist damage.

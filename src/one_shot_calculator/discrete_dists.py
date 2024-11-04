@@ -51,3 +51,6 @@ def prob_between(dist,low,high):
     """Gives the probability that a draw from dist is between low and high, inclusive"""
     return sum([prob_get(dist,i) for i in range(low,high+1)])
 
+def min_one(dist):
+    """Returns dist, changed so that any outcomes below one are set to one."""
+    return {list(dist)[i]: dist[list(dist)[i]] if list(dist)[i]>1 else 0 for i in range(len(list(dist))) } | {1: sum(dist[list(dist)[i]] if list(dist)[i]<=1 else 0 for i in range(len(list(dist)))) } 

@@ -36,7 +36,7 @@ def add_const_to_dist(dist,bonus):
 
 def mult_dist_by_const(dist,mult):
     """Gives the distribution of a value drawn from dist multiplied by mult
-       Rounds down to get integers as required by D&D 3.5 application"""
+       Rounds down to get integers as required by D&D 3.5 and AD&D applications"""
     return { i: sum(prob_get(dist,j) for j in range(int(i//mult),int((i+1)//mult))) for i in range(int(min_dist(dist)*mult//1),int(max_dist(dist)*mult//1)+1) }
 
 def prob_at_least(dist,outcome):

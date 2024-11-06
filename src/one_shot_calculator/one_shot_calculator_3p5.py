@@ -6,7 +6,7 @@ import pandas as pd
 from frozendict import frozendict
 from one_shot_calculator.discrete_dists import *
 
-def attack_dist(attack_bonus,armor_class,damage_dist,crit_range=(20,20),crit_mult=2,confirm_bonus=0,crit_effect={0:1}):
+def attack_dist(attack_bonus,armor_class,damage_dist,crit_range=(20,20),crit_mult=2,confirm_bonus=0,crit_effect=frozendict({0:1})):
     """Returns the probability distribution for damage dealt by attacks with attack_bonus against
        armor_class which if they hit deal damage_dist damage.
        

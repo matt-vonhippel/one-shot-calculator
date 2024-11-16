@@ -3,9 +3,11 @@ Module for calculating the chance to one-shot monsters in D&D 3.5.
 """
 
 import pandas as pd
+import functools
 from frozendict import frozendict
 from one_shot_calculator.discrete_dists import *
 
+@functools.cache
 def attack_dist(attack_bonus,armor_class,damage_dist,crit_range=(20,20),crit_mult=2,confirm_bonus=0,crit_effect=frozendict({0:1})):
     """Returns the probability distribution for damage dealt by attacks with attack_bonus against
        armor_class which if they hit deal damage_dist damage.
@@ -22,10 +24,12 @@ def attack_dist(attack_bonus,armor_class,damage_dist,crit_range=(20,20),crit_mul
     nonzerodist=frozendict({i: (hit_chance-crit_chance)*prob_get(min_one(damage_dist),i)+crit_chance*prob_get(min_one(add_dists(multiple_dist(crit_mult,damage_dist),crit_effect)),i) for i in range(min_dist(min_one(damage_dist)),max_dist(min_one(add_dists(multiple_dist(crit_mult,damage_dist),crit_effect)))+1)})
     return nonzerodist | zerodist
 
+@functools.cache
 def save_chance(save_bonus,difficulty_class):
     """Returns the chance to save with save_bonus against difficulty_class"""
     return prob_at_least(basic_die_dist(20),max(2,min(difficulty_class-save_bonus,20)))
 
+@functools.cache
 def save_for_half_dist(save_bonus,difficulty_class,damage_dist):
     """Returns the probability distribution for damage if one takes half damage on a successful save.
        Rolls with save_bonus against difficulty_class, on a failed save takes damage_dist"""

@@ -359,7 +359,12 @@ def hp_dist(row):
 
 def process_csv_adnd(edition_purist=None):
     """Processes the CSV file SBLaxman's AD&D Monster List for AD&D monsters into a usable pandas dataframe and returns the result
-        edition_purist lets you specify to only include 1e or 2e monsters with edition_purist='1e' or '2e'"""
+        edition_purist lets you specify to only include 1e or 2e monsters with edition_purist='1e' or '2e'
+        
+        Current simplifications: 
+        -2e save rules only, every monster assumed to save as warrior
+        -DMG save rules rather than MM save rules
+        -Various monsters filtered out if key stats are not easily machine-readable """
 
     #using importlib.resources to control access to the csv files
     csv_file=impresources.files(csv) / "SBLaxman's AD&D Monster List 2.1.csv"

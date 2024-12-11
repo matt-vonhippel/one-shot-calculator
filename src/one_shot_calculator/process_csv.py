@@ -343,9 +343,279 @@ def save_from_hd(hd,type,table='warrior'):
                         return 6
                     case _:
                         raise ValueError("Not a valid save type!")
+        case 'priest':
+            if hd<4:
+                match type:
+                    case 'paralyzation/poison/death':
+                        return 10
+                    case 'rod/staff/wand':
+                        return 14
+                    case 'petrification/polymorph':
+                        return 13
+                    case 'breath_weapon':
+                        return 16
+                    case 'spells':
+                        return 15
+                    case _:
+                        raise ValueError("Not a valid save type!")
+            elif hd<7:
+                match type:
+                    case 'paralyzation/poison/death':
+                        return 9
+                    case 'rod/staff/wand':
+                        return 13
+                    case 'petrification/polymorph':
+                        return 12
+                    case 'breath_weapon':
+                        return 15
+                    case 'spells':
+                        return 14
+                    case _:
+                        raise ValueError("Not a valid save type!")
+            elif hd<10:
+                match type:
+                    case 'paralyzation/poison/death':
+                        return 7
+                    case 'rod/staff/wand':
+                        return 11
+                    case 'petrification/polymorph':
+                        return 10
+                    case 'breath_weapon':
+                        return 13
+                    case 'spells':
+                        return 12
+                    case _:
+                        raise ValueError("Not a valid save type!")
+            elif hd<13:
+                match type:
+                    case 'paralyzation/poison/death':
+                        return 6
+                    case 'rod/staff/wand':
+                        return 10
+                    case 'petrification/polymorph':
+                        return 9
+                    case 'breath_weapon':
+                        return 12
+                    case 'spells':
+                        return 11
+                    case _:
+                        raise ValueError("Not a valid save type!")
+            elif hd<16:
+                match type:
+                    case 'paralyzation/poison/death':
+                        return 5
+                    case 'rod/staff/wand':
+                        return 9
+                    case 'petrification/polymorph':
+                        return 8
+                    case 'breath_weapon':
+                        return 11
+                    case 'spells':
+                        return 10
+                    case _:
+                        raise ValueError("Not a valid save type!")
+            elif hd<19:
+                match type:
+                    case 'paralyzation/poison/death':
+                        return 4
+                    case 'rod/staff/wand':
+                        return 8
+                    case 'petrification/polymorph':
+                        return 7
+                    case 'breath_weapon':
+                        return 10
+                    case 'spells':
+                        return 9
+                    case _:
+                        raise ValueError("Not a valid save type!")
+            else:
+                match type:
+                    case 'paralyzation/poison/death':
+                        return 2
+                    case 'rod/staff/wand':
+                        return 6
+                    case 'petrification/polymorph':
+                        return 5
+                    case 'breath_weapon':
+                        return 8
+                    case 'spells':
+                        return 7
+                    case _:
+                        raise ValueError("Not a valid save type!")
+        case 'rogue':
+            if hd<5:
+                match type:
+                    case 'paralyzation/poison/death':
+                        return 13
+                    case 'rod/staff/wand':
+                        return 14
+                    case 'petrification/polymorph':
+                        return 12
+                    case 'breath_weapon':
+                        return 16
+                    case 'spells':
+                        return 15
+                    case _:
+                        raise ValueError("Not a valid save type!")
+            elif hd<9:
+                match type:
+                    case 'paralyzation/poison/death':
+                        return 12
+                    case 'rod/staff/wand':
+                        return 12
+                    case 'petrification/polymorph':
+                        return 11
+                    case 'breath_weapon':
+                        return 15
+                    case 'spells':
+                        return 13
+                    case _:
+                        raise ValueError("Not a valid save type!")
+            elif hd<13:
+                match type:
+                    case 'paralyzation/poison/death':
+                        return 11
+                    case 'rod/staff/wand':
+                        return 10
+                    case 'petrification/polymorph':
+                        return 10
+                    case 'breath_weapon':
+                        return 14
+                    case 'spells':
+                        return 11
+                    case _:
+                        raise ValueError("Not a valid save type!")
+            elif hd<17:
+                match type:
+                    case 'paralyzation/poison/death':
+                        return 10
+                    case 'rod/staff/wand':
+                        return 8
+                    case 'petrification/polymorph':
+                        return 9
+                    case 'breath_weapon':
+                        return 13
+                    case 'spells':
+                        return 9
+                    case _:
+                        raise ValueError("Not a valid save type!")
+            elif hd<21:
+                match type:
+                    case 'paralyzation/poison/death':
+                        return 9
+                    case 'rod/staff/wand':
+                        return 6
+                    case 'petrification/polymorph':
+                        return 8
+                    case 'breath_weapon':
+                        return 12
+                    case 'spells':
+                        return 7
+                    case _:
+                        raise ValueError("Not a valid save type!")
+            else:
+                match type:
+                    case 'paralyzation/poison/death':
+                        return 8
+                    case 'rod/staff/wand':
+                        return 4
+                    case 'petrification/polymorph':
+                        return 7
+                    case 'breath_weapon':
+                        return 11
+                    case 'spells':
+                        return 5
+                    case _:
+                        raise ValueError("Not a valid save type!")
+        case 'wizard':
+            if hd<6:
+                match type:
+                    case 'paralyzation/poison/death':
+                        return 14
+                    case 'rod/staff/wand':
+                        return 11
+                    case 'petrification/polymorph':
+                        return 13
+                    case 'breath_weapon':
+                        return 15
+                    case 'spells':
+                        return 12
+                    case _:
+                        raise ValueError("Not a valid save type!")
+            elif hd<11:
+                match type:
+                    case 'paralyzation/poison/death':
+                        return 13
+                    case 'rod/staff/wand':
+                        return 9
+                    case 'petrification/polymorph':
+                        return 11
+                    case 'breath_weapon':
+                        return 13
+                    case 'spells':
+                        return 10
+                    case _:
+                        raise ValueError("Not a valid save type!")
+            elif hd<16:
+                match type:
+                    case 'paralyzation/poison/death':
+                        return 11
+                    case 'rod/staff/wand':
+                        return 7
+                    case 'petrification/polymorph':
+                        return 9
+                    case 'breath_weapon':
+                        return 11
+                    case 'spells':
+                        return 8
+                    case _:
+                        raise ValueError("Not a valid save type!")
+            elif hd<21:
+                match type:
+                    case 'paralyzation/poison/death':
+                        return 10
+                    case 'rod/staff/wand':
+                        return 5
+                    case 'petrification/polymorph':
+                        return 7
+                    case 'breath_weapon':
+                        return 9
+                    case 'spells':
+                        return 6
+                    case _:
+                        raise ValueError("Not a valid save type!")
+            else:
+                match type:
+                    case 'paralyzation/poison/death':
+                        return 8
+                    case 'rod/staff/wand':
+                        return 3
+                    case 'petrification/polymorph':
+                        return 5
+                    case 'breath_weapon':
+                        return 7
+                    case 'spells':
+                        return 4
+                    case _:
+                        raise ValueError("Not a valid save type!")
         case _:
             raise ValueError("Not a valid save table!")
-        
+
+def save_from_row(row,save_mode,type):
+    match save_mode:
+        case "all_warrior":
+            if type=='paralyzation/poison/death':
+                return save_from_hd(effective_hd(row["HD_dice"],row["HD_bonus"]),type)
+            else:
+                return save_from_hd(intfilter(row["Intelligence"],effective_hd(row["HD_dice"],row["HD_bonus"])),type)
+        case "worst_case":
+            if type=='paralyzation/poison/death':
+                return min([save_from_hd(effective_hd(row["HD_dice"],row["HD_bonus"]),type,table=x) for x in ["priest","warrior","rogue","wizard"]])
+            else:
+                return min([save_from_hd(intfilter(row["Intelligence"],effective_hd(row["HD_dice"],row["HD_bonus"])),type,table=x) for x in ["priest","warrior","rogue","wizard"]])
+        case _:
+            raise ValueError("Not a valid save mode!")
+
 def hp_dist(row):
     """Finds the hp options for a row in the dataframe"""
     if row["fixed_hp"]:
@@ -357,12 +627,15 @@ def hp_dist(row):
             return min_one(add_const_to_dist(multiple_dist(row["HD_dice"],basic_die_dist(8)),row["HD_bonus"]))
 
 
-def process_csv_adnd(edition_purist=None):
+def process_csv_adnd(edition_purist=None,save_mode="all_warrior"):
     """Processes the CSV file SBLaxman's AD&D Monster List for AD&D monsters into a usable pandas dataframe and returns the result
         edition_purist lets you specify to only include 1e or 2e monsters with edition_purist='1e' or '2e'
+        save_mode lets you choose:
+            all_warrior: all monsters assumed to save as warrior
+            worst_case: all monsters assumed to have the highest save in any class's table for that level
         
         Current simplifications: 
-        -2e save rules only, every monster assumed to save as warrior
+        -2e save rules only, psionicist saves currently not included
         -DMG save rules rather than MM save rules
         -Various monsters filtered out if key stats are not easily machine-readable """
 
@@ -403,11 +676,11 @@ def process_csv_adnd(edition_purist=None):
     adnd_monster_table=adnd_monster_table.join(xp_separated)
 
     #computes save numbers, currently using default 'everything is a warrior'
-    adnd_monster_table.loc[:,'save_vs_paralyzation/poison/death']=adnd_monster_table.apply(lambda x: save_from_hd(effective_hd(x["HD_dice"],x["HD_bonus"]),'paralyzation/poison/death'),axis=1)
-    adnd_monster_table.loc[:,'save_vs_rod/staff/wand']=adnd_monster_table.apply(lambda x: save_from_hd(intfilter(x["Intelligence"],effective_hd(x["HD_dice"],x["HD_bonus"])),'rod/staff/wand'),axis=1)
-    adnd_monster_table.loc[:,'save_vs_petrification/polymorph']=adnd_monster_table.apply(lambda x: save_from_hd(intfilter(x["Intelligence"],effective_hd(x["HD_dice"],x["HD_bonus"])),'petrification/polymorph'),axis=1)
-    adnd_monster_table.loc[:,'save_vs_breath_weapon']=adnd_monster_table.apply(lambda x: save_from_hd(intfilter(x["Intelligence"],effective_hd(x["HD_dice"],x["HD_bonus"])),'breath_weapon'),axis=1)
-    adnd_monster_table.loc[:,'save_vs_spells']=adnd_monster_table.apply(lambda x: save_from_hd(intfilter(x["Intelligence"],effective_hd(x["HD_dice"],x["HD_bonus"])),'spells'),axis=1)
+    adnd_monster_table.loc[:,'save_vs_paralyzation/poison/death']=adnd_monster_table.apply(lambda x: save_from_row(x,save_mode,'paralyzation/poison/death'),axis=1)
+    adnd_monster_table.loc[:,'save_vs_rod/staff/wand']=adnd_monster_table.apply(lambda x: save_from_row(x,save_mode,'rod/staff/wand'),axis=1)
+    adnd_monster_table.loc[:,'save_vs_petrification/polymorph']=adnd_monster_table.apply(lambda x: save_from_row(x,save_mode,'petrification/polymorph'),axis=1)
+    adnd_monster_table.loc[:,'save_vs_breath_weapon']=adnd_monster_table.apply(lambda x: save_from_row(x,save_mode,'breath_weapon'),axis=1)
+    adnd_monster_table.loc[:,'save_vs_spells']=adnd_monster_table.apply(lambda x: save_from_row(x,save_mode,'spells'),axis=1)
 
     #adds an entry that says whether a monster is large enough to take large monster damage
     adnd_monster_table.loc[:,'larger_than_man']=definitely_larger_mask(adnd_monster_table)

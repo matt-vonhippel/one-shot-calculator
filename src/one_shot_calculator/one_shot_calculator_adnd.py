@@ -7,6 +7,17 @@ import functools
 from frozendict import frozendict
 from one_shot_calculator.discrete_dists import *
 
+def monster_lookup(dataframe,monster_name):
+    """Given a monster dataframe and a monster name, prints the full names of all monsters whose names contain that name"""
+    print("Possible Matches:")
+    for name in dataframe[functools.reduce(lambda x,y: x & y,[dataframe["Name"].str.contains(word) for word in monster_name.split()])]["Name"].unique():
+        print(name)
+
+def one_monster_table(dataframe,monster_full_name):
+    """Given a monster dataframe and a monster full name, returns the rows in the dataframe corresponding to that monster.
+       If not sure of the full name, check with monster_lookup first."""
+    return dataframe[dataframe["Name"]==monster_full_name]
+
 @functools.cache
 def attack_dist(thac0,armor_class,damage_dist,attack_bonus=0):
     """Returns the probability distribution for damage dealt by attacks with thac0 against

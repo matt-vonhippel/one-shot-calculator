@@ -183,4 +183,7 @@ def one_shot_histogram_XP(dataframe,low_XP,high_XP,one_shot_function):
        low_XP is the lowest XP included, high_XP is the highest
        one_shot_function is a function that acts on the dataframe and gives a chance of one-shotting a monster
        """
-    return dataframe.loc[(dataframe["XP"]>=low_XP) & (dataframe["XP"]<=high_XP)].apply(one_shot_function,axis=1).round(3).hist(bins=list(map(lambda x: x/20,range(21))),weights=dataframe.loc[(dataframe["XP"]>=low_XP) & (dataframe["XP"]<=high_XP)]["weight"])
+    fig=dataframe.loc[(dataframe["XP"]>=low_XP) & (dataframe["XP"]<=high_XP)].apply(one_shot_function,axis=1).round(3).hist(bins=list(map(lambda x: x/20,range(21))),weights=dataframe.loc[(dataframe["XP"]>=low_XP) & (dataframe["XP"]<=high_XP)]["weight"],labels={ "value": "one-shot chance" }, hover_data={"variable" : False})
+    fig.layout.update(showlegend=False)
+
+    return fig

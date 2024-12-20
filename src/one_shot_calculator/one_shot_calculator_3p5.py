@@ -7,6 +7,8 @@ import functools
 from frozendict import frozendict
 from one_shot_calculator.discrete_dists import *
 
+pd.options.plotting.backend = "plotly"
+
 @functools.cache
 def attack_dist(attack_bonus,armor_class,damage_dist,crit_range=(20,20),crit_mult=2,confirm_bonus=0,crit_effect=frozendict({0:1})):
     """Returns the probability distribution for damage dealt by attacks with attack_bonus against
@@ -146,4 +148,7 @@ def one_shot_histogram(dataframe,low_CR,high_CR,one_shot_function):
        low_CR is the lowest CR included, high_CR is the highest
        one_shot_function is a function that acts on the dataframe and gives a chance of one-shotting a monster
        """
-    return dataframe.loc[(dataframe["CR"]>=low_CR) & (dataframe["CR"]<=high_CR)].apply(one_shot_function,axis=1).round(3).hist(bins=list(map(lambda x: x/20,range(21))))
+    fig=dataframe.loc[(dataframe["CR"]>=low_CR) & (dataframe["CR"]<=high_CR)].apply(one_shot_function,axis=1).round(3).hist(bins=list(map(lambda x: x/20,range(21))),labels={ "value": "one-shot chance" }, hover_data={"variable" : False})
+    fig.layout.update(showlegend=False)
+
+    return fig

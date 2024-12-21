@@ -1,6 +1,6 @@
 [project]
 name = "one_shot_calculator"
-version = "1.1.0"
+dynamic=["version"]
 authors = [
   { name="Matt von Hippel" },
 ]
@@ -20,3 +20,6 @@ Issues = "https://github.com/matt-vonhippel/one-shot-calculator/issues"
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path="src/one_shot_calculator/__init__.py"

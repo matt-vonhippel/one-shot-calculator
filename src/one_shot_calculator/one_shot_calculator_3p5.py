@@ -6,6 +6,7 @@ import pandas as pd
 import functools
 from frozendict import frozendict
 from one_shot_calculator.discrete_dists import *
+from one_shot_calculator import __version__
 
 pd.options.plotting.backend = "plotly"
 
@@ -150,5 +151,6 @@ def one_shot_histogram(dataframe,low_CR,high_CR,one_shot_function):
        """
     fig=dataframe.loc[(dataframe["CR"]>=low_CR) & (dataframe["CR"]<=high_CR)].apply(one_shot_function,axis=1).round(3).hist(bins=list(map(lambda x: x/20,range(21))),labels={ "value": "one-shot chance" }, hover_data={"variable" : False})
     fig.layout.update(showlegend=False)
+    fig.add_annotation(x=1,y=-0.3,xref="paper",yref="paper",text="Created with one-shot-calculator v."+__version__,showarrow=False)
 
     return fig

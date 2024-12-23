@@ -142,14 +142,14 @@ def spell_save_for_half_one_shot_function(save_type,difficulty_class,damage_dist
     return one_shot_function
 
 
-def one_shot_histogram(dataframe,low_CR,high_CR,one_shot_function):
+def one_shot_histogram(dataframe,low_CR,high_CR,one_shot_function,title=None):
     """Returns a histogram of the chance that an attack one-shots monsters in a given CR range.
 
        dataframe should be the result of a process_csv command
        low_CR is the lowest CR included, high_CR is the highest
        one_shot_function is a function that acts on the dataframe and gives a chance of one-shotting a monster
        """
-    fig=dataframe.loc[(dataframe["CR"]>=low_CR) & (dataframe["CR"]<=high_CR)].apply(one_shot_function,axis=1).round(3).hist(bins=list(map(lambda x: x/20,range(21))),labels={ "value": "one-shot chance" }, hover_data={"variable" : False})
+    fig=dataframe.loc[(dataframe["CR"]>=low_CR) & (dataframe["CR"]<=high_CR)].apply(one_shot_function,axis=1).round(3).hist(bins=list(map(lambda x: x/20,range(21))),labels={ "value": "one-shot chance" }, hover_data={"variable" : False},title=title)
     fig.layout.update(showlegend=False)
     fig.add_annotation(x=1,y=-0.3,xref="paper",yref="paper",text="Created with one-shot-calculator v."+__version__,showarrow=False)
 

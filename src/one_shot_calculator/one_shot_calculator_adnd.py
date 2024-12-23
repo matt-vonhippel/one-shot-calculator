@@ -6,6 +6,7 @@ import pandas as pd
 import functools
 from frozendict import frozendict
 from one_shot_calculator.discrete_dists import *
+from one_shot_calculator import __version__
 
 def monster_lookup(dataframe,monster_name):
     """Given a monster dataframe and a monster name, prints the full names of all monsters whose names contain that name"""
@@ -183,7 +184,8 @@ def one_shot_histogram_XP(dataframe,low_XP,high_XP,one_shot_function):
        low_XP is the lowest XP included, high_XP is the highest
        one_shot_function is a function that acts on the dataframe and gives a chance of one-shotting a monster
        """
-    fig=dataframe.loc[(dataframe["XP"]>=low_XP) & (dataframe["XP"]<=high_XP)].apply(one_shot_function,axis=1).round(3).hist(bins=list(map(lambda x: x/20,range(21))),weights=dataframe.loc[(dataframe["XP"]>=low_XP) & (dataframe["XP"]<=high_XP)]["weight"],labels={ "value": "one-shot chance" }, hover_data={"variable" : False})
+    fig=dataframe.loc[(dataframe["XP"]>=low_XP) & (dataframe["XP"]<=high_XP)].apply(one_shot_function,axis=1).round(3).hist(bins=list(map(lambda x: x/20,range(21))),weights=dataframe.loc[(dataframe["XP"]>=low_XP) & (dataframe["XP"]<=high_XP)]["weight"],labels={ "value": "one-shot chance" }, hover_data={"variable" : False},title=title)
     fig.layout.update(showlegend=False)
+    fig.add_annotation(x=1,y=-0.3,xref="paper",yref="paper",text="Created with one-shot-calculator v."+__version__,showarrow=False)
 
     return fig

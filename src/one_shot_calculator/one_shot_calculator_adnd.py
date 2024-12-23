@@ -8,6 +8,8 @@ from frozendict import frozendict
 from one_shot_calculator.discrete_dists import *
 from one_shot_calculator import __version__
 
+pd.options.plotting.backend = "plotly"
+
 def monster_lookup(dataframe,monster_name):
     """Given a monster dataframe and a monster name, prints the full names of all monsters whose names contain that name"""
     print("Possible Matches:")

@@ -177,7 +177,7 @@ def spell_save_for_half_one_shot_function(save_type,damage_dist,save_modifier=0,
 
 
 
-def one_shot_histogram_XP(dataframe,low_XP,high_XP,one_shot_function):
+def one_shot_histogram_XP(dataframe,low_XP,high_XP,one_shot_function,title=None):
     """Returns a histogram of the chance that an attack one-shots monsters in a given XP range.
 
        dataframe should be the result of a process_csv command

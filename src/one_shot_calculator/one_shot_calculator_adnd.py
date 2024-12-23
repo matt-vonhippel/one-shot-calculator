@@ -186,8 +186,11 @@ def one_shot_histogram_XP(dataframe,low_XP,high_XP,one_shot_function,title=None)
        low_XP is the lowest XP included, high_XP is the highest
        one_shot_function is a function that acts on the dataframe and gives a chance of one-shotting a monster
        """
-    fig=dataframe.loc[(dataframe["XP"]>=low_XP) & (dataframe["XP"]<=high_XP)].apply(one_shot_function,axis=1).round(3).hist(bins=list(map(lambda x: x/20,range(21))),weights=dataframe.loc[(dataframe["XP"]>=low_XP) & (dataframe["XP"]<=high_XP)]["weight"],labels={ "value": "one-shot chance" }, hover_data={"variable" : False},title=title)
-    fig.layout.update(showlegend=False)
+    fig=dataframe.loc[(dataframe["XP"]>=low_XP) & (dataframe["XP"]<=high_XP)].apply(one_shot_function,axis=1).round(3).plot(kind="hist",x=0,y=dataframe.loc[(dataframe["XP"]>=low_XP) & (dataframe["XP"]<=high_XP)]["weight"],histfunc="sum",labels={  "0" : "one-shot chance"},title=title)
+    fig.layout.update(showlegend=False,yaxis_title="average number monsters")
     fig.add_annotation(x=1,y=-0.3,xref="paper",yref="paper",text="Created with one-shot-calculator v."+__version__,showarrow=False)
+    fig.update_xaxes(range=[0.0, 1.0])
+    fig.update_traces(xbins={'start':0.0, 'end':1.0, 'size':0.05})
+    fig.update_traces(hovertemplate='one-shot chance=%{x}<br>average number of monsters=%{y}<extra></extra>')
 
     return fig

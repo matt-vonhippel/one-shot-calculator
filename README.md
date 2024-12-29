@@ -8,7 +8,7 @@ Thus, `one_shot_calculator`. This is Python package to calculate your chances of
 
 ## Install
 
-If you aren't used to using Python, the easiest way to use `one_shot_calculator` is to start from one of the notebooks I've set up on Google Colab. [This one is for D&D 3.5](https://colab.research.google.com/drive/1yWaMMJ_s-MK-ApQlY2LmhExGpLlOYQRE?usp=sharing) and [this one is for AD&D 2e](). Just open up the notebook, try out the examples, then try modifying the code to do what you want to do.
+If you aren't used to using Python, the easiest way to use `one_shot_calculator` is to start from one of the notebooks I've set up on Google Colab. [This one is for D&D 3.5](https://colab.research.google.com/drive/1GXeVRbqqMoXvhVPXW5jzYOzyvlJK5JoM?usp=sharing) and [this one is for AD&D 2e](https://colab.research.google.com/drive/1AYvlqgqFBmdVGfqSTjcf5IXrPGMnhIXh?usp=sharing). Just open up the notebook, try out the examples, then try modifying the code to do what you want to do.
 
 If you are familiar with Python, you can instead install with:
 

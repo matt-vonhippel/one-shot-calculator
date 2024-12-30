@@ -7,6 +7,12 @@ authors = [
 description = "A package to calculate the probability of one-shotting monsters in Dungeons and Dragons"
 readme = "README.md"
 requires-python = ">=3.9"
+dependencies = [
+  "frozendict",
+  "pandas",
+  "numpy",
+  "charset_normalizer",
+]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",

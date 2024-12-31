@@ -36,7 +36,7 @@ jobs:
       id-token: write
 
     environment:
-      name: test
+      name: testpypi
       url: https://test.pypi.org/p/one-shot-calculator
 
     steps:

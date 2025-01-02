@@ -151,7 +151,7 @@ def one_shot_histogram(dataframe,low_CR,high_CR,one_shot_function,title=None):
        """
     fig=dataframe.loc[(dataframe["CR"]>=low_CR) & (dataframe["CR"]<=high_CR)].apply(one_shot_function,axis=1).round(3).hist(bins=list(map(lambda x: x/20,range(21))),labels={ "value": "one-shot chance" }, hover_data={"variable" : False},title=title)
     fig.layout.update(showlegend=False,yaxis_title="number of monsters")
-    fig.add_annotation(x=1,y=-0.3,xref="paper",yref="paper",text="Created with one-shot-calculator v."+__version__,showarrow=False)
+    fig.add_annotation(x=1,y=-0.2,xref="paper",yref="paper",text="Created with one-shot-calculator v."+__version__,showarrow=False)
     fig.update_xaxes(range=[0.0, 1.0])
     fig.update_traces(xbins={'start':0.0, 'end':1.0, 'size':0.05})
 

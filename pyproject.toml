@@ -12,6 +12,7 @@ dependencies = [
   "pandas",
   "numpy",
   "charset_normalizer",
+  "plotly",
 ]
 classifiers = [
     "Programming Language :: Python :: 3",

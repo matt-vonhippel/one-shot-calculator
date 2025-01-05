@@ -188,7 +188,7 @@ def one_shot_histogram_XP(dataframe,low_XP,high_XP,one_shot_function,title=None)
        """
     fig=dataframe.loc[(dataframe["XP"]>=low_XP) & (dataframe["XP"]<=high_XP)].apply(one_shot_function,axis=1).round(3).plot(kind="hist",x=0,y=dataframe.loc[(dataframe["XP"]>=low_XP) & (dataframe["XP"]<=high_XP)]["weight"],histfunc="sum",labels={  "0" : "one-shot chance"},title=title)
     fig.layout.update(showlegend=False,yaxis_title="average number monsters")
-    fig.add_annotation(x=1,y=-0.3,xref="paper",yref="paper",text="Created with one-shot-calculator v."+__version__,showarrow=False)
+    fig.update_layout(title_subtitle={'text':"Created with one-shot-calculator v."+__version__,'font':{'color':'gray','size':13}})
     fig.update_xaxes(range=[0.0, 1.0])
     fig.update_traces(xbins={'start':0.0, 'end':1.0, 'size':0.05})
     fig.update_traces(hovertemplate='one-shot chance=%{x}<br>average number of monsters=%{y}<extra></extra>')
